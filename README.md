@@ -1,4 +1,4 @@
-![image]https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/16-10.png
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/16-10.png)
 
 
 ## 一、项目概述
@@ -55,11 +55,8 @@ data3 : <https://copyfuture.com/blogs-details/2020083113423317484akwfwu4mzs89w>
 
 由于本次项目包含三个数据集，对应三个类别（6分类，2分类，214分类），但是设计的模型都是一样的，因此，下面就以data1进行网络搭建、训练、测试讲解。
 
-​    ![图片 1](/Users/yangkun/Desktop/垃圾分类/图片/图片 1.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2013.png)
 
-​            
-
-​                                                                           卷积神经网络实例
 
 在正式训练之前我们还使用了数据增广技术（ImageDataGenerator）来对我们的小数据集进行数据增强（对数据集图像进行随机旋转、移动、翻转、剪切等），以加强模型的泛化能力。
 
