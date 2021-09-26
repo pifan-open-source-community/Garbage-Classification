@@ -423,9 +423,10 @@ https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/aa/d5/dd06fe0e274e579e1df
 
 ```
 cd/home/pi/Desktop/tf_pi/env/bag
-```
 
 tar -zxvf scipy-1.5.4.tar.gz-C /home/pi/Desktop/tf_pi/env/lib/python3.7/site-packages
+
+```
 
 然后进到这个文件夹里开启安装：【花里胡哨的各种代码配置呀啥的，会安装三十分钟左右】
 
@@ -519,10 +520,27 @@ sourceenv/bin/activate
 
 
 
-#### 3、进入代码那里
+#### 3、克隆代码并进入代码目录
+
+克隆代码
 
 ```
-cd ~/Desktop/tf_pi/env/laji/code1
+cd ~/Desktop/tf_pi/env
+
+git clone https://github.com/pifan-open-source-community/Garbage-Classification.git
+```
+
+若提示git命令未找到：
+
+```
+sudo apt-get install git
+
+```
+
+进入代码目录：
+
+```
+cd ~/Desktop/tf_pi/env/Garbage-Classification/code1
 ```
 
 这里更改test.py的测试集路径
@@ -584,7 +602,7 @@ source env/bin/activate
 
 
 ```
-cd ~/Desktop/tf_pi/env/laji/code1
+cd ~/Desktop/tf_pi/env/Garbage-Classification/code1
 
 
 
