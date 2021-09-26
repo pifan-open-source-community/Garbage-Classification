@@ -1,4 +1,4 @@
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/16-10.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/16-10.png)
 
 ```
 代码仓库
@@ -62,26 +62,26 @@ data3 : <https://copyfuture.com/blogs-details/2020083113423317484akwfwu4mzs89w>
 
 由于本次项目包含三个数据集，对应三个类别（6分类，2分类，214分类），但是设计的模型都是一样的，因此，下面就以data1进行网络搭建、训练、测试讲解。
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%201.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%201.png)
 
 
 在正式训练之前我们还使用了数据增广技术（ImageDataGenerator）来对我们的小数据集进行数据增强（对数据集图像进行随机旋转、移动、翻转、剪切等），以加强模型的泛化能力。
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%202.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%202.png)
 
 #### 1、模型构建
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%203.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%203.png)
 
 其中conv2d表示执行卷积，maxpooling2d表示执行最大池化，Activation表示特定的激活函数类型，Flatten层用来将输入“压平”，用于卷积层到全连接层的过渡，Dense表示全连接层（128-128-6，最后一位表示分类数目）。
 
  参数设置：为训练设置一些参数，比如训练的epoches，batch_szie，learning rate等
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%204.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%204.png)
 
 在这里我们使用了SGD优化器，由于这个任务是一个多分类问题，可以使用类别交叉熵（categorical_crossentropy）。但如果执行的分类任务仅有两类，那损失函数应更换为二进制交叉熵损失函数（binary cross-entropy）
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%205.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%205.png)
 
 #### 2、模型保存
 
@@ -89,7 +89,7 @@ data3 : <https://copyfuture.com/blogs-details/2020083113423317484akwfwu4mzs89w>
 
 模型保存文件名为：trash_data1_AlexNet3.h5， 我们设置为保存模型效果最好的一次。
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%206.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%206.png)
 
 ## 四、训练并测试
 
@@ -101,21 +101,21 @@ data3 : <https://copyfuture.com/blogs-details/2020083113423317484akwfwu4mzs89w>
 
 进行训练
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%207.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%207.png)
 
  训练过程中的打印结果：
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%208.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%208.png)
 
 #### 2、模型保存
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%209.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%209.png)
 
 #### 3、预测单张图片
 
 现在我们已经得到了我们训练好的模型trash_data1_AlexNet3.h5，然后我们编写一个专门用于预测的脚本predict.py
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2010.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2010.png)
 
 预测脚本中的代码编写思路是：载入训练好的模型-》读入图片信息-》预测-》展示预测效果
 
@@ -137,7 +137,7 @@ acc accuracy(test) :86%
 
 单张图像耗时：0.0237s
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2011.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2011.png)
 
 data2:
 
@@ -151,7 +151,7 @@ acc accuracy(test) :94%
 
 单张图像耗时：0.0814 
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2012.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2012.png)
 
 data3
 
@@ -165,7 +165,7 @@ acc accuracy(test) :72%
 
 单张图像耗时：0.077
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2013.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2013.png)
 
 
 
@@ -315,7 +315,7 @@ virtualenvenv
 sourceenv/bin/activate
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2014.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2014.png)
 
 3、安装tensorflow1.14.0
 
@@ -323,11 +323,11 @@ sourceenv/bin/activate
 
 <https://github.com/lhelontra/tensorflow-on-arm/releases/tag/v1.14.0-buster>
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2015.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2015.png)
 
 用U盘将这个文件拷到树莓派上，建一个bag文件夹存放
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2016.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2016.png)
 
 安装依赖包： 
 
@@ -363,7 +363,7 @@ cd bag
 pip3 install tensorflow-1.14.0-cp37-none-linux_armv7l.whl
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2017.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2017.png)
 
 这里要安装二十分钟。。。出错了再来一遍就好了。。
 
@@ -377,7 +377,7 @@ import tensorflow as tf
 tf.version
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2019.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2019.png)
 
 #### 4、安装keras
 
@@ -403,7 +403,7 @@ sudo pip3install pybind11
 
 看一下子numpy版本，太高了
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2020.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2020.png)
 
 重新安装
 
@@ -419,7 +419,7 @@ pip3 installnumpy==1.16.0
 
 https://mirrors.tuna.tsinghua.edu.cn/pypi/web/packages/aa/d5/dd06fe0e274e579e1dff21aa021219c039df40e39709fabe559faed072a5/scipy-1.5.4.tar.gz
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2021.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2021.png)
 
 ```
 cd/home/pi/Desktop/tf_pi/env/bag
@@ -436,11 +436,11 @@ cd /home/pi/Desktop/tf_pi/env/lib/python3.7/site-packages/scipy-1.5.4
 pythonsetup.py install
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2022.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2022.png)
 
 pip3 list看一看：【太六了，终于成功了】
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2023.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2023.png)
 
 再使用这个命令安装keras：
 
@@ -450,9 +450,9 @@ pip3 install keras==2.2.4
 
 请注意；由于在virtualenv里面，一定一定要避免sudo pip3 install，否则会安装到默认路径下！发现keras安装到默认环境了，所以调用不成功，pip list没有
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2024.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2024.png)
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2025.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2025.png)
 
 **解决办法重新安装**
 
@@ -460,7 +460,7 @@ pip3 install keras==2.2.4
 pip3install keras==2.2.4
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2026.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2026.png)
 
 
 
@@ -492,7 +492,7 @@ import keras
 print(keras.__version__)
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2027.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2027.png)
 
 ## 六、用树莓派跑分类识别的代码
 
@@ -506,9 +506,9 @@ print(keras.__version__)
 
 其实Filezilla这个FTP传输就很方便
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2028.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2028.png)
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2029.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2029.png)
 
 #### 2、激活虚拟环境
 
@@ -549,7 +549,7 @@ cd ~/Desktop/tf_pi/env/Garbage-Classification/code1
 pythontest.py
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2030.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2030.png)
 
 发现有个文件解码有问题，于是根据错误的消息的路径，去这里：
 
@@ -557,15 +557,15 @@ pythontest.py
 /home/pi/Desktop/tf_pi/env/lib/python3.7/site-packages/keras/engine
 ```
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2031.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2031.png)
 
 在.decode('utf-8')前面加.encode('utf8')
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2032.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2032.png)
 
 再次到测试这里运行python test.py，解决了!
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2033.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2033.png)
 
 **测试AlexNet需要把test.py文件里的权重文件路径改了，把输入图片维度由(150,150) 改为(128,128)**
 
@@ -659,7 +659,7 @@ https://www.piwheels.org/simple/opencv-python/opencv_python-3.4.6.27-cp37-cp37m-
 
 #### 3、将两个文件拷贝到树莓派上去
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2034.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2034.png)
 
 #### 4、安装这两个文件，先更新pip
 
@@ -693,7 +693,7 @@ sudo raspi-config
 
 然后运行摄像头程序
 
-![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/%E5%9B%BE%E7%89%87%2035.png)
+![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/%E5%9B%BE%E7%89%87%2035.png)
 
 
 
