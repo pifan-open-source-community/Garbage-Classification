@@ -1,5 +1,12 @@
 ![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/16-10.png)
 
+```
+代码仓库
+1、码云Gitee：https://gitee.com/yangkun_monster/raspberrypi-Garbage-classification
+2、Github：https://github.com/pifan-open-source-community/garbage-Classification
+视频教程地址：
+哔哩哔哩bilibili：树莓派爱好者基地
+```
 
 ## 一、项目概述
 
