@@ -1,3 +1,6 @@
+![image]https://github.com/pifan-open-source-community/garbage-Classification/blob/main/image/16-10.png
+
+
 ## 一、项目概述
 
 简介：该垃圾分类项目主要在于对各种垃圾进行所属归类，本次项目采用keras深度学习框架搭建卷积神经网络模型实现图像分类，最终移植在树莓派上进行实时视频流的垃圾识别。
