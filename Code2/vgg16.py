@@ -1,4 +1,4 @@
-﻿#coding:utf-8
+#coding:utf-8
 import numpy as np
 import time
 import os
@@ -19,7 +19,7 @@ top_model = Sequential()
 top_model.add(Flatten(input_shape=vgg16_model.output_shape[1:])) #降成一维 从1开始图片的宽，高，通道数，0是数量所以不要
 top_model.add(Dense(256,activation = 'relu'))
 top_model.add(Dropout(0.5))
-top_model.add(Dense(2,activation = 'softmax'))
+top_model.add(Dense(214,activation = 'softmax'))
 
 model = Sequential()
 model.add(vgg16_model)
@@ -43,28 +43,28 @@ rescale = 1/255, #数据归一化
 batch_size = 32
 #生成训练数据
 train_generator = train_datagen.flow_from_directory(
-'../data2/train',
+'../data3/train',
 target_size = (150,150),
 batch_size = batch_size,
 )
 
 #生成测试数据
 test_generator = test_datagen.flow_from_directory(
-'../data2/test',
+'../data3/test',
 target_size = (150,150),
 batch_size = batch_size,
 )
 
 print(train_generator.class_indices)
 
-filepath = 'trash_data2_model_vgg16.h5'
+filepath = 'trash_data3_model_vgg16.h5'
 # Callbacks
 callbacks_list = [
 ModelCheckpoint(filepath, monitor='val_acc', verbose=1,save_best_only=True,mode='max',period=1)]
 
 #定义优化器，代价函数，训练过程中计算准确率
 model.compile(optimizer = SGD(lr=1e-4,momentum=0.9), loss = 'categorical_crossentropy', metrics = ['accuracy'])
-model.fit_generator(train_generator,epochs=50,validation_data=test_generator, callbacks=callbacks_list)
+model.fit_generator(train_generator,epochs=500,validation_data=test_generator, callbacks=callbacks_list)
 
 # model.save('vpice_model_vgg16.h5')
 print(" model is save successfuly!")
