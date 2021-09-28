@@ -1,5 +1,7 @@
 ![image](https://github.com/pifan-open-source-community/garbage-Classification/blob/main/Images/16-10.png)
 
+此开源项目由树莓派爱好者基地人工智能部门谢远伦、任剑杰、沈超，共同协作完成。在此感谢各位成员的付出与努力。正是有各位的付出，树莓派生态才能越来越丰富！
+
 ```
 代码仓库
 1、码云Gitee：https://gitee.com/yangkun_monster/raspberrypi-Garbage-classification
